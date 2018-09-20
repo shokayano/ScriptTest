@@ -9,19 +9,16 @@ public class Boss
     // 魔法用の関数
     public void Magic(int Magic)
     {
-        for (int i = 0; i < 10; i++)
+        if (this.mp < Magic)
+        {
+            Debug.Log("MPが足りないため魔法が使えない。" + this.mp);
+        }
+        else
         {
             // 残りmpを減らす
             this.mp -= Magic;
 
             Debug.Log("魔法攻撃をした。残りMPは" + this.mp + "。");
-
-            if (this.mp < Magic)
-            {
-
-                Debug.Log("MPが足りないため魔法が使えない。");
-
-            }
         }
     }
 }
@@ -35,8 +32,11 @@ public class kadai02 : MonoBehaviour
         // Bossクラスの変数を宣言してインスタンスを代入
         Boss lastboss = new Boss();
 
-        // 魔法用の関数を呼び出す
-        lastboss.Magic(5);
+        for (int i = 0; i < 20; i++)
+        {
+            // 魔法用の関数を呼び出す
+            lastboss.Magic(5);
+        }
     }
 
     // Update is called once per frame
