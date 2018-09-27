@@ -32,11 +32,12 @@ public class kadai02 : MonoBehaviour
         // Bossクラスの変数を宣言してインスタンスを代入
         Boss lastboss = new Boss();
 
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 10; i++)
         {
             // 魔法用の関数を呼び出す
             lastboss.Magic(5);
         }
+        lastboss.Magic(5);
     }
 
     // Update is called once per frame
